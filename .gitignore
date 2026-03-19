@@ -2,8 +2,13 @@
 /*
 !.gitignore
 !code/
+!data/
 
-# 但仍然忽视 code 文件夹内的某些文件
+# 忽视 data 文件夹内的所有内容，除了 page_1st_batch_bbox
+data/*
+!data/page_1st_batch_bbox/
+
+# 忽视 code 文件夹内的某些文件
 code/__pycache__/
 code/*.pyc
 code/.DS_Store
