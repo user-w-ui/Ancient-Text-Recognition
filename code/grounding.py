@@ -6,7 +6,11 @@ from typing import Any, Dict, Optional
 from pathlib import Path
 from paddleocr import PPStructureV3 
 
-engine = PPStructureV3()
+# 得把旋转检测和文档矫正关掉，否则输出的预测框会错位，因为后续要基于原图的坐标来计算百分比坐标
+engine = PPStructureV3(
+    use_doc_orientation_classify=False,
+    use_doc_unwarping=False
+)
 
 
 def _map_layout_label(label_name: str) -> str:
